@@ -37,3 +37,12 @@ app.add_middleware(
 ) 
 async def example():
     return main_thread.toggleLightsState()
+
+@app.get("/status")
+async def get_status():
+    return main_thread.get_all_states()
+
+@app.post("/device/{room}/{device}/{state}")
+async def control_device(room: str, device: str, state: int):
+    topic = f"home/{room}/{device}"
+    return main_thread.set_device_state(topic, state)

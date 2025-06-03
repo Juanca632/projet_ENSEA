@@ -51,7 +51,7 @@ function App() {
 
 
     useEffect(() => {
-    fetch('http://172.20.10.14:8000/status')
+    fetch('http://91.99.149.250:8000/status')
       .then(res => res.json())
       .then(data => {
         setSwitches({
@@ -90,7 +90,7 @@ const toggleSwitch = (name: keyof typeof switches) => {
   }
 
   // Enviar POST para actualizar el estado real
-  fetch(`http://172.20.10.14:8000/device/${room}/${device}/${newState ? 1 : 0}`, {
+  fetch(`http://91.99.149.250:8000/device/${room}/${device}/${newState ? 1 : 0}`, {
     method: "POST",
   })
   .then(res => {

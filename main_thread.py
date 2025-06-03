@@ -74,7 +74,7 @@ class MainThread(Thread):
         # Update GPIO (mockable)
         cmd = f"gpioset gpiochip0 {gpio_pin}={value}"
         print(f"Running: {cmd}")
-        # subprocess.run(["gpioset", "gpiochip0", f"{gpio_pin}={value}"])
+        subprocess.run(["gpioset", "gpiochip0", f"{gpio_pin}={value}"])
 
         # Update MQTT
         self.client.publish(topic, payload=str(value), retain=True)

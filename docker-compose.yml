@@ -12,5 +12,5 @@
       context: ./frontend
     container_name: frontend
     ports:
-      - "5000:80"  # Exposing frontend on port 80
+      - "80:80"  # Exposing frontend on port 80
     restart: always  # Always restart the container if it crashes

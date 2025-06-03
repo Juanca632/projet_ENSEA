@@ -1,0 +1,16 @@
+  GNU nano 7.2                                         docker-compose.yml                                                   services:
+  backend:
+    build:
+      context: ./
+    container_name: backend
+    ports:
+      - "8000:8000"  # Exposing backend on port 8000
+    restart: always  # Always restart the container if it crashes
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - "5000:80"  # Exposing frontend on port 80
+    restart: always  # Always restart the container if it crashes
